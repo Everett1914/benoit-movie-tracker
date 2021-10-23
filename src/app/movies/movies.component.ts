@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-export interface MovieElement {
-  name: string;
-  position: number;
-  source: string;
-  cost: number;
-  genre: string;
-  type: string;
-}
+import { MovieElement } from '../MovieElement';
 
 const ELEMENT_DATA: MovieElement[] = [
   {position: 1, name: 'The Warriors', genre: 'Action', source: 'Google Play', cost: 3.99, type: "Movie"},
