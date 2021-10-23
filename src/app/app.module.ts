@@ -12,14 +12,14 @@ import { MoviesComponent } from './movies/movies.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MatTableModule,
-    MatButtonToggleModule,
     DashboardComponent,
     MoviesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
