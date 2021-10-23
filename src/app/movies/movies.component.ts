@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 export interface MovieElement {
   name: string;
   position: number;
@@ -29,12 +28,13 @@ const ELEMENT_DATA: MovieElement[] = [
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
+
 export class MoviesComponent implements OnInit {
+
+  constructor() { }
 
   displayedColumns: string[] = ['position', 'name', 'genre', 'source', 'cost', 'type'];
   dataSource = ELEMENT_DATA;
-
-  constructor() { }
 
   ngOnInit(): void {
   }
