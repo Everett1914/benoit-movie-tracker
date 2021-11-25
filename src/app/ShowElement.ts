@@ -1,6 +1,6 @@
 export interface ShowElement {
     name: string;
-    position: number;
+    show_id: number;
     source: string;
     cost: number;
     genre: string;
