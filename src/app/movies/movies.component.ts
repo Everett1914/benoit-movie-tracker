@@ -1,4 +1,4 @@
-import { DataSource } from '@angular/cdk/collections';
+//import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { ShowElement } from '../ShowElement';
 import { ShowsService } from '../shows.service';
@@ -30,8 +30,8 @@ export class MoviesComponent implements OnInit {
 
   constructor( private showsService: ShowsService ) { }
 
-  displayedColumns: string[] = ['show_id', 'name', 'genre', 'source', 'cost', 'type'];
-  DataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['position', 'name', 'genre', 'source', 'cost', 'type'];
+  //DataSource = ELEMENT_DATA;
 
   ngOnInit(): void {
     this.getAllShows();
@@ -41,5 +41,6 @@ export class MoviesComponent implements OnInit {
     this.showsService.getAllShows()
     .subscribe(shows => this.shows = shows);
   }
+  DataSource = this.shows;
 
 }
