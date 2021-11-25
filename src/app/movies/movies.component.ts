@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieElement } from '../MovieElement';
+import { ShowElement } from '../ShowElement';
+import { ShowsService } from '../shows.service';
 
-const ELEMENT_DATA: MovieElement[] = [
+/*const ELEMENT_DATA: ShowElement[] = [
   {position: 1, name: 'The Warriors', genre: 'Action', source: 'Google Play', cost: 3.99, type: "Movie"},
   {position: 2, name: 'Escape From New York', genre: 'Action', source: 'Google Play', cost: 3.99, type: "Movie"},
   {position: 3, name: 'Alien', genre: 'Sci-Fi/Fantasy', source: 'Google Play', cost: 3.99, type: "Movie"}, 
@@ -15,7 +16,7 @@ const ELEMENT_DATA: MovieElement[] = [
   {position: 11, name: 'Little Axe', genre: 'Action', source: 'Google Play', cost: 3.99, type: "Television"}, 
   {position: 12, name: 'Dr. Who', genre: 'Sci-Fi/Fantasy', source: 'Google Play', cost: 3.99, type: "Television"},
   {position: 13, name: 'Keeping Up Appearances', genre: 'Comedy', source: 'Google Play', cost: 3.99, type: "Television"},
-];
+];*/
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -24,12 +25,20 @@ const ELEMENT_DATA: MovieElement[] = [
 
 export class MoviesComponent implements OnInit {
 
-  constructor() { }
+  shows: ShowElement[] = [];
+
+  constructor( private showsService: ShowsService ) { }
 
   displayedColumns: string[] = ['position', 'name', 'genre', 'source', 'cost', 'type'];
-  dataSource = ELEMENT_DATA;
+  //dataSource = ELEMENT_DATA;
 
   ngOnInit(): void {
+    this.getAllShows();
+  }
+
+  getAllShows(): void {
+    this.showsService.getAllShows()
+    .subscribe(shows => this.shows = shows);
   }
 
 }

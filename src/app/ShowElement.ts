@@ -1,4 +1,4 @@
-export interface MovieElement {
+export interface ShowElement {
     name: string;
     position: number;
     source: string;
