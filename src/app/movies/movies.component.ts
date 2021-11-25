@@ -41,6 +41,6 @@ export class MoviesComponent implements OnInit {
     this.showsService.getAllShows()
     .subscribe(shows => this.shows = shows);
   }
-  DataSource = this.shows;
+  //DataSource = this.shows;
 
 }
