@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<br>
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="Dashboard">
+    <mat-button-toggle routerLink="/dashboard" class=button value="Dashboard">Dashboard</mat-button-toggle>
+    <mat-button-toggle routerLink="/movies" class=button value="Movies">Movies</mat-button-toggle>
+</mat-button-toggle-group>
+
+<form #data = "ngForm" (ngSubmit) = "onClickSubmit(data.value)" >
+
+  <label for="new-show">Name</label>
+  <input type = "text" name = "name" placeholder = "Name" #showName ngModel>
+
+  <label for="new-show">Genre</label>
+  <input type = "text" name = "genre" placeholder = "Genre" #showGenre ngModel>
+
+  <label for="new-show">Source</label>
+  <input type = "text" name = "source" placeholder = "Source" #showSource ngModel>
+
+  <label for="new-show">Cost</label>
+  <input type = "text" name = "cost" placeholder = "Cost" #showCost ngModel>
+
+  <label for="new-show">Type</label>
+  <input type = "text" name = "type" placeholder = "Type" #showType ngModel>
+
+  <button (click)="showName.value=''; showGenre.value=''; showSource.value=''; showCost.value=''; showType.value=''">Submit</button>
+  </form>
+
+
+
+ 

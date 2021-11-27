@@ -20,8 +20,15 @@ export class ShowsService {
   getAllShows(): Observable<ShowElement[]> {
     return this.http.get<ShowElement[]>(this.showsUrl)
       .pipe(
-        catchError(this.handleError<ShowElement[]>('getHeroes', []))
+        catchError(this.handleError<ShowElement[]>('getAllShows', []))
       );
+  }
+
+  addShow(show: ShowElement): Observable<ShowElement> {
+    return this.http.post<ShowElement>(this.showsUrl, show, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<ShowElement>('addShow'))
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
