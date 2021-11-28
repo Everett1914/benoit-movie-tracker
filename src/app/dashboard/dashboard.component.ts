@@ -22,6 +22,5 @@ export class DashboardComponent implements OnInit {
         .subscribe(show => {
           this.shows.push(show);
         });
-      data.resetForm();
     }
 }
