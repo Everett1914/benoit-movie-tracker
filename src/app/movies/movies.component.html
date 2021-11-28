@@ -4,7 +4,13 @@
     <mat-button-toggle routerLink="/movies" class=button value="Movies">Movies</mat-button-toggle>
 </mat-button-toggle-group>
 <br><br>
-<table mat-table [dataSource]="shows" class="mat-elevation-z8 demo-table">
+
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
         <th mat-header-cell *matHeaderCellDef id="Position">No.</th>
