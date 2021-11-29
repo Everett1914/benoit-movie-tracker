@@ -10,7 +10,7 @@ import { ShowsService } from '../shows.service';
 
 export class MoviesComponent implements OnInit {
 
-  shows: ShowElement[] = [];
+  //shows: ShowElement[] = [];
 
   constructor( private showsService: ShowsService ) { }
 
