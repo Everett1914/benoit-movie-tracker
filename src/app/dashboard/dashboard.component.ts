@@ -18,9 +18,10 @@ export class DashboardComponent implements OnInit {
   }
   
   onClickSubmit(data: any) {
+      console.log(data)
       this.showsService.addShow({name:data.name, genre:data.genre, source:data.source, cost:Number(data.cost), type:data.type} as ShowElement)
         .subscribe(show => {
           this.shows.push(show);
         });
-    }
+  }
 }

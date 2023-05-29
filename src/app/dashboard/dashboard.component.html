@@ -1,28 +1,58 @@
-<br>
-<mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="Dashboard">
-    <mat-button-toggle routerLink="/dashboard" class=button value="Dashboard">Dashboard</mat-button-toggle>
-    <mat-button-toggle routerLink="/movies" class=button value="Movies">Movies</mat-button-toggle>
-</mat-button-toggle-group>
-<form #data = "ngForm" (ngSubmit) = "onClickSubmit(data.value)" >
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <title>Benoit Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <meta content="text/html; charset=utf-8" />
+  </head>
+  <body>      
+  <br>
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="Dashboard">
+      <mat-button-toggle routerLink="/dashboard" class=button value="Dashboard">Dashboard</mat-button-toggle>
+      <mat-button-toggle routerLink="/movies" class=button value="Movies">Movies</mat-button-toggle>
+  </mat-button-toggle-group>
+  <form #data = "ngForm" (ngSubmit) = "onClickSubmit(data.value)" >
 
-  <label for="new-show">Name</label>
-  <input type = "text" name = "name" placeholder = "Name" #showName ngModel>
+    <label for="new-show" class = "inp_lab">Name</label>
+    <input type = "text" class = "inp_lab" name = "name" placeholder = "Name" #showName ngModel>
 
-  <label for="new-show">Genre</label>
-  <input type = "text" name = "genre" placeholder = "Genre" #showGenre ngModel>
+    <label for="new-show" class = "inp_lab">Genre</label>
+    <input type = "text" class = "inp_lab" name = "genre" placeholder = "Genre" #showGenre ngModel>
 
-  <label for="new-show">Source</label>
-  <input type = "text" name = "source" placeholder = "Source" #showSource ngModel>
+    <label for="new-show" class = "inp_lab">Source</label>
+    <input type = "text" class = "inp_lab" name = "source" placeholder = "Source" #showSource ngModel>
 
-  <label for="new-show">Cost</label>
-  <input type = "text" name = "cost" placeholder = "Cost" #showCost ngModel>
+    <label for="new-show" class = "inp_lab">Cost</label>
+    <input type = "text" class = "inp_lab" name = "cost" placeholder = "Cost" #showCost ngModel>
 
-  <label for="new-show">Type</label>
-  <input type = "text" name = "type" placeholder = "Type" #showType ngModel>
+    <label for="new-show" class = "inp_lab">Type</label>
+    <input type = "text" class = "inp_lab" name = "type" placeholder = "Type" #showType ngModel>
+   
+    <div class = "wrapper">    
+      <div class = "radio_group">      
+        <input type = "radio" name = "like" value="1" #showLike ngModel>
+        <label for="like">
+          <em class = "far fa-thumbs-up"></em>
+        </label>
+      </div>
 
-  <button (click)="showName.value=''; showGenre.value=''; showSource.value=''; showCost.value=''; showType.value=''">Submit</button>
+      <div class = "radio_group">      
+        <input type = "radio" name = "like" value="0" #showLike ngModel> 
+        <label for="like">
+          <em class = "far fa-thumbs-down"></em>
+        </label>
+      </div>
+    </div>
+
+    <br> 
+
+    <button class="btn" (click)="showName.value=''; showGenre.value=''; showSource.value=''; showCost.value=''; showType.value=''; showLike.value=''">Submit</button> 
+
   </form>
+  </body>
 
+</html>
 
 
  

@@ -9,7 +9,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -29,6 +29,7 @@ import { MoviesComponent } from './movies/movies.component';
     MatButtonToggleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     HttpClientModule,
     FormsModule,
   ],
